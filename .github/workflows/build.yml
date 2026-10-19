@@ -1,11 +1,13 @@
 name: Build
-on: workflow_dispatch
+on:
+  push:
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: run: unzip *.zip
+      - run: unzip *.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
